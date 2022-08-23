@@ -1,0 +1,4 @@
+# Project exclude paths
+/springcloudalibaba-order-server/target/
+/springcloudalibaba-user-common/target/
+/springcloudalibaba-user-server/target/

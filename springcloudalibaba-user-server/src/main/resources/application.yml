@@ -1,0 +1,19 @@
+server:
+  port: 1011
+spring:
+  application:
+    name: user-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848	#注册中心地址
+    sentinel:
+      transport:
+        dashboard: localhost:1111
+      datasource:
+        flow:
+          nacos: #限流持久配置
+            server-addr: localhost:8848	#使用nacos的持久
+            dataId: application-user-limit	#获取限流的数据源的dataId
+            groupId: DEFAULT_GROUP
+            rule-type: flow #类型：限流
