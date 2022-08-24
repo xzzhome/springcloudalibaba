@@ -1,0 +1,46 @@
+server:
+  port: 1110 #服务端口号
+
+spring:
+  application: # 指定此服务的应用名称
+    name: gateway-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848    #注册中心地址
+    gateway:
+      discovery:
+        locator:
+          enabled: false #开放服务名访问方式
+          lower-case-service-id: true #服务名小写
+      routes:
+        - id: application-user #指定服务名
+          uri: lb://user-server #去注册中心找这个服务名
+          predicates: #断言，匹配访问的路径
+            - Path=/user/**    #服务访问路径
+          filters:
+            - StripPrefix=1    #请求转发的时候会去掉 /user访问路径，1为去掉前缀个数
+        - id: application-order
+          uri: lb://order-server
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+    globalcors: #跨域配置
+      cors-configurations:
+        '[/**]':
+          allowedOrigins: "https://docs.spring.io" #允许的站点
+          allowedMethods: #允许的请求方式
+            - GET
+            - POST
+            - DELETE
+            - PUT
+            - HEAD
+            - CONNECT
+            - TRACE
+            - OPTIONS
+          allowHeaders: #允许的请求头
+            - Content-Type
+feign:
+  sentinel:
+    enabled: true #熔断

@@ -17,7 +17,7 @@ public class UserController {
     //blockHandler限流，fallback熔断         ,blockHandlerClass= ExceptionUtil.class
     @SentinelResource(value="user", blockHandler="exceptionHandler", fallback="getByIdfallback")
     public User getById(@PathVariable("id") Long id){
-        int i = 1 / 0;	//方法异常，触发熔断
+        //int i = 1 / 0;	//方法异常，触发熔断
         return new User(id,"zs:"+id, "我是zs");
     }
 

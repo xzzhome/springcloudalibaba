@@ -12,6 +12,7 @@
         <module>springcloudalibaba-user-common</module>
         <module>springcloudalibaba-order-server</module>
         <module>springcloudalibaba-user-server</module>
+        <module>springcloundalibaba-gateway-server</module>
     </modules>
 
     <properties>

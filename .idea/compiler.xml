@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springcloudalibaba-user-server" />
         <module name="springcloudalibaba-user-common" />
+        <module name="springcloundalibaba-gateway-server" />
+        <module name="springcloudalibaba-user-server" />
         <module name="springcloudalibaba-order-server" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="springcloudalibaba-order-server" options="-parameters" />
       <module name="springcloudalibaba-user-common" options="-parameters" />
       <module name="springcloudalibaba-user-server" options="-parameters" />
+      <module name="springcloundalibaba-gateway-server" options="-parameters" />
     </option>
   </component>
 </project>
