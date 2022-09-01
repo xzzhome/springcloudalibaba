@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class ExceptionUtil {
     public static User exceptionHandler(@PathVariable("id") Long id, BlockException ex) {
         ex.printStackTrace();
-        return new User(-1L,"限流了","限流了");
+        return new User(-1L,"限流了",-1);
     }
 }

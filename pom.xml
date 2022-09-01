@@ -13,6 +13,7 @@
         <module>springcloudalibaba-order-server</module>
         <module>springcloudalibaba-user-server</module>
         <module>springcloundalibaba-gateway-server</module>
+        <module>springcloudalibaba-movie-server</module>
     </modules>
 
     <properties>
